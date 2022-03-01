@@ -1,0 +1,42 @@
+//---------------------------------------------------------------------------
+
+#ifndef mysqlH
+#define mysqlH
+#include "include/mysql.h"
+#include <string>
+#include <stdlib.h>
+
+//---------------------------------------------------------------------------
+
+
+class BDD_MYSQL{
+
+
+			bool etat;
+			MYSQL *mySQL;
+			MYSQL_RES *resultat;
+			char requete[1000];
+			MYSQL_ROW myROW;
+			MYSQL_FIELD *myFields;
+
+
+
+			//char* requete,adress,id,mdp,table;
+
+public:
+		   BDD_MYSQL();
+
+		   bool connexion(char *adress,char *id,char *mdp,char *table);
+		   bool deconnexion(),envoi(int temperature),envoi2(int temperature);
+		   char* req1,adress,id,mdp,table;
+		   int TEMPERATURE;
+		   float RESISTANCE;
+
+private:
+
+			bool etatrequete;
+
+};
+
+
+#endif

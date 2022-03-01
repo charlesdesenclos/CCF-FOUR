@@ -1,0 +1,54 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+
+#include "carte9111.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+
+
+C9111::C9111()
+{
+
+}
+
+C9111::~C9111()
+{
+
+}
+
+I16 C9111::Initialisation()
+{
+	ID_Card=Register_Card(PCI_9111DG,0);
+	if(ID_Card>=0)
+	{
+		AO_9111_Config(ID_Card,P9111_AO_UNIPOLAR); 								//initialise les sortie analogique
+		AO_VWriteChannel(ID_Card,0,0); 											//On a 0v en sortie analogique
+		AI_9111_Config(ID_Card,TRIG_INT_PACER,P9111_TRGMOD_SOFT,0);             //initialisation entré analogique
+	}
+    return ID_Card;
+}
+
+
+void C9111::Quitter()
+{
+	Release_Card(ID_Card);
+}
+
+void C9111::active0volt()
+{
+	AO_VWriteChannel(ID_Card,0,0);
+}
+void C9111::active5volt()
+{
+    AO_VWriteChannel(ID_Card,0,5);
+}
+void C9111::active10volt()
+{
+	 AO_VWriteChannel(ID_Card,0,10);
+}
+void C9111::afficher_tension()
+{
+	AI_VReadChannel(ID_Card,0, AD_B_10_V, &tension_lu);
+	return tension_lu;
+}

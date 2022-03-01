@@ -1,0 +1,110 @@
+body {
+    background: #474C5C;
+    font-family: 'Open Sans';
+    font-weight: 300;
+    margin:0
+}
+.main {
+    background: #e1dee1 url(images/tropicana.jpg) right top no-repeat;
+    background-size: contain;
+    padding: 80px 20px 20px;
+    margin-top: 120px;
+}
+@media only screen and (max-width : 992px) {
+    .main {
+        background: #e1dee1 ;
+        margin-top: 30px;
+    }
+}
+.contenu{
+    padding-right:10px;
+    padding-left:200px;
+    padding-top: 10px;
+    margin-right:auto;
+    margin-left:auto;
+}
+@media (min-width:768px){
+    .contenu{
+        width:750px
+    }
+}
+@media (min-width:992px){
+    .contenu{
+        width:970px
+    }
+}
+@media (min-width:1200px){
+    .contenu{
+        width:1170px
+    }
+}
+h1 {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    color: #00561B;
+    margin-bottom: 0;
+}
+h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: #1b1216;
+    font-size: 18px;
+    margin-top: 5px;
+}
+h4 {
+    font-family: 'Lato', sans-serif;
+    color: #1b1216;
+}
+h5 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 150;
+    color: #1b1216;
+    font-size: 14px;
+    margin-top: 5px;
+}
+form {
+    margin-top: 60px;
+}
+input.form-control , input[type="submit"] , .btn {
+    border-radius: 0px;
+}
+.btn {
+    transition: all ease-in-out 0.2s;
+}
+.credits {
+    margin-top: 100px;
+    color: #999;
+    font-size: 12px;
+}
+.credits a {
+    color: inherit;
+}
+.sidebar {
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    width:185px;
+    border-radius: 4px;
+    background:#e1dee1;
+}
+.ul {
+    margin:0;
+    padding:0;
+}
+.princ {
+    margin-left:187px;
+}
+.deconnexion { 
+    position: absolute; 
+    top: 600px; 
+    left: 18px; 
+}
+ 
+.erreur{
+    background-color:#00561B;
+    color: white !important;
+    height: 25px;
+    width: 300px;
+    padding-top: 2px;
+}

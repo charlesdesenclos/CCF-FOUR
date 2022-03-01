@@ -1,0 +1,29 @@
+//---------------------------------------------------------------------------
+
+#ifndef carte9111H
+#define carte9111H
+
+#include <vcl.h>
+#include "./include/DAQHeader.h"
+#include "./include/Dask.h"
+//---------------------------------------------------------------------------
+
+class C9111
+{
+	public :
+	C9111();
+	~C9111();
+	I16 Initialisation();
+	void Quitter();
+	void active0volt();
+	void active5volt();
+	void active10volt();
+	void afficher_tension();
+
+	private :
+	I16 ID_Card;
+	F64 Tension_lu;
+
+};
+
+#endif

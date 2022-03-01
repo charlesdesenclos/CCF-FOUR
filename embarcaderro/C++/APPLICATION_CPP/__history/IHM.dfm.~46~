@@ -1,0 +1,110 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 212
+  ClientWidth = 419
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Shape1: TShape
+    Left = 351
+    Top = 110
+    Width = 49
+    Height = 25
+    Brush.Color = clRed
+    Shape = stCircle
+    Visible = False
+  end
+  object Binit: TButton
+    Left = 64
+    Top = 40
+    Width = 75
+    Height = 25
+    Caption = 'Initialisation'
+    TabOrder = 0
+    OnClick = BinitClick
+  end
+  object Bquitter: TButton
+    Left = 261
+    Top = 40
+    Width = 75
+    Height = 25
+    Caption = 'Quitter'
+    TabOrder = 1
+    Visible = False
+    OnClick = BquitterClick
+  end
+  object B_0V: TButton
+    Left = 48
+    Top = 168
+    Width = 75
+    Height = 25
+    Caption = '0V'
+    TabOrder = 2
+    Visible = False
+    OnClick = B_0VClick
+  end
+  object B_5V: TButton
+    Left = 177
+    Top = 168
+    Width = 75
+    Height = 25
+    Caption = '5V'
+    TabOrder = 3
+    Visible = False
+    OnClick = B_5VClick
+  end
+  object B_10V: TButton
+    Left = 304
+    Top = 168
+    Width = 75
+    Height = 25
+    Caption = '10V'
+    TabOrder = 4
+    Visible = False
+    OnClick = B_10VClick
+  end
+  object Edit1: TEdit
+    Left = 32
+    Top = 112
+    Width = 121
+    Height = 21
+    TabOrder = 5
+    TextHint = 'Temp'#233'rature '#176'C'
+    Visible = False
+  end
+  object Button1: TButton
+    Left = 176
+    Top = 110
+    Width = 178
+    Height = 25
+    Caption = 'Temp'#233'rature et BdD'
+    TabOrder = 6
+    Visible = False
+    OnClick = Button1Click
+  end
+  object Deconnexion: TButton
+    Left = 177
+    Top = 110
+    Width = 177
+    Height = 25
+    Caption = 'Deconnexion BdD et Temp'#233'rature'
+    TabOrder = 7
+    Visible = False
+    OnClick = DeconnexionClick
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 60000
+    OnTimer = Timer1Timer
+    Left = 24
+    Top = 56
+  end
+end

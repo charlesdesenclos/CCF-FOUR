@@ -1,0 +1,48 @@
+//---------------------------------------------------------------------------
+
+#ifndef IHMH
+#define IHMH
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+
+#include "carte9111.h"
+#include "MYSQL.cpp"
+#include <Vcl.ExtCtrls.hpp>
+#include <Vcl.ComCtrls.hpp>
+//---------------------------------------------------------------------------
+class TForm1 : public TForm
+{
+__published:	// Composants gérés par l'EDI
+	TButton *Binit;
+	TButton *Bquitter;
+	TButton *B_0V;
+	TButton *B_5V;
+	TButton *B_10V;
+	TEdit *Edit1;
+	TButton *Button1;
+	TShape *Shape1;
+	TButton *Deconnexion;
+	TTimer *Timer1;
+	void __fastcall BinitClick(TObject *Sender);
+	void __fastcall BquitterClick(TObject *Sender);
+	void __fastcall B_0VClick(TObject *Sender);
+	void __fastcall B_5VClick(TObject *Sender);
+	void __fastcall B_10VClick(TObject *Sender);
+	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall DeconnexionClick(TObject *Sender);
+	void __fastcall Timer1Timer(TObject *Sender);
+
+private:
+	// Déclarations utilisateur
+	C9111 *c9111;
+	BDD_MYSQL *bdd;
+public:		// Déclarations utilisateur
+	__fastcall TForm1(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TForm1 *Form1;
+//---------------------------------------------------------------------------
+#endif

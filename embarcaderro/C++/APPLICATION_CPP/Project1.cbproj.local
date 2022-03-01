@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2017/10/09 15:53:00.000.543,=C:\Users\LABO-2\Documents\Embarcadero\Studio\Projets\Unit1.cpp</Transaction>
+    <Transaction>2017/10/09 15:53:00.000.500,=C:\Users\LABO-2\Documents\Embarcadero\Studio\Projets\Project1PCH1.h</Transaction>
+    <Transaction>2017/10/10 10:12:56.000.963,=C:\Users\LABO-2\Documents\Embarcadero\Studio\Projets\Project1PCH1.h</Transaction>
+    <Transaction>2017/10/10 10:12:57.000.001,=C:\Users\LABO-2\Documents\Embarcadero\Studio\Projets\Unit1.cpp</Transaction>
+    <Transaction>2017/10/10 10:13:17.000.542,C:\Users\LABO-2\Desktop\Four\IHM.cpp=C:\Users\LABO-2\Documents\Embarcadero\Studio\Projets\Unit1.cpp</Transaction>
+    <Transaction>2017/10/10 10:13:17.000.542,C:\Users\LABO-2\Desktop\Four\IHM.dfm=C:\Users\LABO-2\Documents\Embarcadero\Studio\Projets\Unit1.dfm</Transaction>
+    <Transaction>2017/10/10 10:13:17.000.542,C:\Users\LABO-2\Desktop\Four\IHM.h=C:\Users\LABO-2\Documents\Embarcadero\Studio\Projets\Unit1.h</Transaction>
+    <Transaction>2017/10/10 10:13:22.000.120,C:\Users\LABO-2\Desktop\Four\Project1PCH1.h=C:\Users\LABO-2\Documents\Embarcadero\Studio\Projets\Project1PCH1.h</Transaction>
+    <Transaction>2017/10/10 10:13:26.000.489,C:\Users\LABO-2\Desktop\Four\Project1.cbproj=C:\Users\LABO-2\Documents\Embarcadero\Studio\Projets\Project1.cbproj</Transaction>
+    <Transaction>2017/10/10 10:14:40.000.023,=C:\Users\LABO-2\Desktop\Four\carte9111.cpp</Transaction>
+    <Transaction>2017/10/10 10:14:49.000.006,=C:\Users\LABO-2\Desktop\Four\include\Dask.h</Transaction>
+    <Transaction>2017/10/10 10:15:00.000.639,=C:\Users\LABO-2\Desktop\Four\Lib\pdask_bc.lib</Transaction>
+    <Transaction>2017/10/10 10:15:20.000.851,=C:\Users\LABO-2\Desktop\Four\include\DAQHeader.h</Transaction>
+    <Transaction>2018/03/13 15:28:55.000.780,=C:\Users\LABO-2\Desktop\FOUR\MYSQL.cpp</Transaction>
+    <Transaction>2018/03/13 15:30:20.000.669,=C:\Users\LABO-2\Desktop\FOUR\libmysql.lib</Transaction>
+    <Transaction>2018/03/13 15:30:33.000.821,=C:\Users\LABO-2\Desktop\FOUR\Win32\Debug\libmysql.dll</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,146 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+//#include <fmx.h>
+
+#include "IHM.h"
+//---------------------------------------------------------------------------
+//#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+	c9111 = new(C9111);
+    bdd = new(BDD_MYSQL);
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::BinitClick(TObject *Sender)
+{
+	I16 Id_card1;
+	Id_card1=c9111->Initialisation();                                           //appel de la fonction Initialiser de la class
+	if (Id_card1>=0)                                                            //Si l'initialisation est faite
+	{
+		Edit1->Visible=true;
+        Binit->Enabled=false;
+		Bquitter->Visible=true;
+		B_0V->Visible=true;
+		B_5V->Visible=true;
+		B_10V->Visible=true;
+		Button1->Visible=true;
+		Shape1->Visible=true;
+		MessageBox(NULL,"Connexion réussi","REUSSI",MB_OK);
+        Button1Click(NULL);
+	}
+	else
+	{
+		MessageBox(NULL,"Erreur de connexion","ATTENTION",MB_ICONSTOP);
+    }
+
+}
+//---------------------------------------------------------------------------
+
+
+
+
+void __fastcall TForm1::BquitterClick(TObject *Sender)
+{
+    c9111->active0volt();
+	c9111->Quitter();
+	Edit1->Visible=false;
+	Binit->Enabled=true;
+	Bquitter->Visible=false;
+	B_0V->Visible=false;
+	B_5V->Visible=false;
+	B_10V->Visible=false;
+	Button1->Visible=false;
+    Shape1->Visible=false;
+	Close();
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::B_0VClick(TObject *Sender)
+{
+	c9111->active0volt();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::B_5VClick(TObject *Sender)
+{
+	c9111->active5volt();
+}
+
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::B_10VClick(TObject *Sender)
+{
+    c9111->active10volt();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	/*char *adress;
+	char *id;
+	char *mdp;
+	char *table;
+
+	etat=bdd->connexion(adress,id,mdp,table);   //verification des données pour la connexion
+	*/
+	etat=bdd->connexion("192.168.65.34","root","root","temperature");
+	if (etat==true) {
+		Shape1->Brush->Color=clGreen;
+		Deconnexion->Visible=true;
+		Button1->Visible=false;
+		Timer1->Enabled=true;
+        F64 Tension_lu = 0;
+		F64 temperature = 0;
+		Tension_lu = c9111->afficher_tension();
+		temperature = ((Tension_lu*100)/10);
+		Edit1->Text=temperature;
+		bdd->envoi(temperature);
+	}
+	else{
+		Shape1->Brush->Color=clRed;
+		Deconnexion->Visible=false;
+		Button1->Visible=true;
+        Timer1->Enabled=false;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::DeconnexionClick(TObject *Sender)
+{
+    bool reponse;
+
+	reponse=bdd->deconnexion();        //deconnexion de la bdd
+
+	if (reponse == true) {
+		Shape1->Brush->Color=clRed;
+		Button1->Visible=true;
+		Deconnexion->Visible=false;
+		etat=NULL;
+        Timer1->Enabled=false;
+	}
+	else{
+		Shape1->Brush->Color=clGreen;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Timer1Timer(TObject *Sender)
+{
+	F64 Tension_lu = 0;
+	F64 temperature = 0;
+	Tension_lu = c9111->afficher_tension();
+	temperature = ((Tension_lu*100)/10);
+	Edit1->Text=temperature;
+	bdd->envoi(temperature);
+}
+//---------------------------------------------------------------------------
+
